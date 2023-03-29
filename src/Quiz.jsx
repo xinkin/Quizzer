@@ -123,9 +123,9 @@ export default function Quiz() {
     backgroundColor: "green"
   };
   return (
-    <main>
+    <>
       {flag ? (
-        <section>
+        <>
           <div className="List">{quesList}</div>
           <span className="foot_sec">
             <h1 className="score">
@@ -137,17 +137,17 @@ export default function Quiz() {
               Play Again
             </button>
           </span>
-        </section>
+        </>
       ) : loading ? (
           <div class="loader"></div>
       ) : (
-        <section>
+        <>
           <div className="List">{quesList}</div>
           <button className="Check-Btn" onClick={scoreCalc}>
             Check Answers
           </button>
-        </section>
+        </>
       )}
-    </main>
+    </>
   );
 }

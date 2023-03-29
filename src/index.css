@@ -1,12 +1,8 @@
 body {
   background: #f5f7fb;
-  background-image: url(./public/layered-waves-haikei.png);
+  background-image: url(./layered-waves-haikei.png);
   background-size: cover;
 }
-/* section{
-  background-image: url(./public/layered-waves-haikei.png);
-  background-size: cover;
-} */
 .loader {
   width: 48px;
   height: 48px;
