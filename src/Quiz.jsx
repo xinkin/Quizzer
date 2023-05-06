@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Question from "./Question";
 import { nanoid } from "nanoid";
 import he from "he";
+import bg1 from "./layered-waves-haikei.png";
 
 export default function Quiz() {
   const [loading, setLoading] = useState(false);
@@ -14,6 +15,7 @@ export default function Quiz() {
   const [flag, setFlag] = useState(false);
   const [score, setScore] = useState(0);
   //Api call
+
   useEffect(() => {
     setLoading(true);
     fetch("https://opentdb.com/api.php?amount=5&type=multiple")
@@ -31,19 +33,23 @@ export default function Quiz() {
         setLoading(false);
       });
   }, [reset]);
+
   useEffect(() => {
     //deconstructing the array and forming a new array of choices
     const choices1 = qCard.map((info) => [
       info.correct_answer,
       ...info.incorrect_answers,
     ]);
+
     //shuffling the choices
     setChoices(choices1.map((item) => item.sort(() => Math.random() - 0.5)));
   }, [qCard]);
+
   //giving ids to selected answers
   function handleAnsSelect(questionId, choice) {
     setAnswers({ ...answers, [questionId]: choice });
   }
+
   //calculating score by matching ids of selected answers and correct answers
   function scoreCalc() {
     let score = 0;
@@ -54,6 +60,7 @@ export default function Quiz() {
     }
     setFlag(true);
   }
+
   function playAgain() {
     setReset((prev) => !prev);
     setFlag(false);
@@ -61,6 +68,7 @@ export default function Quiz() {
     setScore(0);
     setAnswers([]);
   }
+
   const quesList = flag
     ? qCard.map((info, index) => (
         <Question
@@ -68,7 +76,7 @@ export default function Quiz() {
           ques={info.question}
           choices={
             choices[index] &&
-            choices[index].map((item, x) => (
+            choices[index].map((item) => (
               <div
                 className="ansbox"
                 style={{
@@ -115,15 +123,24 @@ export default function Quiz() {
             ))
           }
         />
-    ));
-  const style1= {
-    backgroundColor: "red"
+      ));
+
+  const backgroundImage = loading ? "none" : `url(${bg1})`;
+  const styles = {
+    backgroundImage,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    overflow: "auto",
   };
-  const style2 = {
-    backgroundColor: "green"
-  };
+
   return (
-    <>
+    <body style={styles}>
       {flag ? (
         <>
           <div className="List">{quesList}</div>
@@ -139,7 +156,7 @@ export default function Quiz() {
           </span>
         </>
       ) : loading ? (
-          <div class="loader"></div>
+        <div class="loader"></div>
       ) : (
         <>
           <div className="List">{quesList}</div>
@@ -148,6 +165,6 @@ export default function Quiz() {
           </button>
         </>
       )}
-    </>
+    </body>
   );
 }

@@ -1,22 +1,23 @@
 body {
+  margin-top: 0;
   background: #f5f7fb;
-  background-image: url(./layered-waves-haikei.png);
   background-size: cover;
 }
+
 .loader {
-  width: 48px;
-  height: 48px;
+  width: 4rem;
+  height: 4rem;
   margin: 25% auto;
   position: relative;
 }
 
 .loader:before {
   content: "";
-  width: 48px;
-  height: 5px;
+  width: 4rem;
+  height: 0.5rem;
   background: rgb(69, 106, 130);
   position: absolute;
-  top: 60px;
+  top: 5.45rem;
   left: 0;
   border-radius: 50%;
   animation: shadow324 0.5s linear infinite;
@@ -30,26 +31,28 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   animation: jump7456 0.5s linear infinite;
+  z-index: 2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes jump7456 {
   15% {
-    border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 0.3rem;
   }
 
   25% {
-    transform: translateY(9px) rotate(22.5deg);
+    transform: translateY(0.9rem) rotate(22.5deg);
   }
 
   50% {
-    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
-    border-bottom-right-radius: 40px;
+    transform: translateY(1.8rem) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 4rem;
   }
 
   75% {
-    transform: translateY(9px) rotate(67.5deg);
+    transform: translateY(0.9rem) rotate(67.5deg);
   }
 
   100% {
@@ -67,65 +70,77 @@ body {
     transform: scale(1.2, 1);
   }
 }
+
 .options {
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 1.563rem;
   font-family: "Inter", sans-serif;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
+
 .ansbox {
-  padding: 5px 30px;
-  border: 0.794239px solid #4d5b9e;
-  border-radius: 7.94239px;
-  margin: 0 20px 0 0;
+  padding: 0.313rem 1.875rem;
+  border: 0.013rem solid #4d5b9e;
+  border-radius: 0.59rem;
+  margin: 0 1.25rem 0 0;
 }
+
 .ansbox:hover {
   cursor: pointer;
 }
+
 .questions {
   color: #293264;
   font-family: "Karla", sans-serif;
-  font-size: 23px;
-  margin-bottom: 25px;
+  font-size: 1.438rem;
+  margin-bottom: 1.563rem;
 }
+
 .List {
-  margin-top: 55px;
-  margin-left: 85px;
+  margin-top: 3.438rem;
+  margin-left: 5.313rem;
 }
+
 .QuesList {
   max-width: 50lh;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 0.013rem solid lightgray;
 }
+
 .Check-Btn {
   font-family: "Inter", sans-serif;
   color: #f5f7fb;
   background: #4d5b9e;
-  border-radius: 15px;
-  padding: 10px 20px;
-  margin-top: 25px;
-  margin-left: 40%;
+  border-radius: 0.938rem;
+  padding: 0.625rem 1.25rem;
+  margin-top: 1.563rem;
+  margin-left: 20%;
 }
+
 .foot_sec {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 25px;
+  margin-top: 1.563rem;
 }
+
 .Play-Btn {
   font-family: "Inter", sans-serif;
   color: #f5f7fb;
   background: #4d5b9e;
-  border-radius: 15px;
-  padding: 0 25px;
+  border-radius: 0.938rem;
+  padding: 0 1.563rem;
   margin-right: 20%;
 }
+
 .score {
   font-family: "Inter", sans-serif;
   color: #293264;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
 }
 
 .landing-comp {
+  /* background-image: url("./layered-waves-haikei.png");
+  background-size: ; */
   text-align: center;
   color: #293264;
   margin-top: 20%;
@@ -133,20 +148,22 @@ body {
 }
 
 .l_ti {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   font-family: "Karla", sans-serif;
 }
+
 .l_subti {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   font-family: "Inter", sans-serif;
 }
+
 .l_Btn {
   background-color: #4d5b9e;
   color: #f5f7fb;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 16px 29px;
-  border-radius: 15px;
+  padding: 1rem 1.813rem;
+  border-radius: 0.938rem;
 }

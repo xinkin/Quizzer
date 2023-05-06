@@ -1,5 +1,5 @@
 import Landing from "./Landing";
-import "./App.css";
+// import "./App.css";
 import Quiz from "./Quiz";
 import { Routes, Route } from "react-router-dom";
 export default function App() {
