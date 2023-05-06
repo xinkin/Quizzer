@@ -139,11 +139,9 @@ body {
 }
 
 .landing-comp {
-  /* background-image: url("./layered-waves-haikei.png");
-  background-size: ; */
   text-align: center;
   color: #293264;
-  margin-top: 20%;
+  padding-top: 45vh;
   scale: 1.7;
 }
 
