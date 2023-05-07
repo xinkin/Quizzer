@@ -83,10 +83,12 @@ export default function Quiz() {
                   backgroundColor:
                     answers[index] === info.correct_answer &&
                     answers[index] === item
-                      ? "#94D7A2"
+                      ? "#94D7A2" // correct answer color
                       : answers[index] === item &&
                         answers[index] !== info.correct_answer
-                      ? "#F8BCBC"
+                      ? "#F8BCBC" // wrong answer color
+                      : item === info.correct_answer
+                      ? "#D2F2E2" // correct answer color but not selected
                       : "#F5F7FB",
                   opacity:
                     answers[index] === item &&
